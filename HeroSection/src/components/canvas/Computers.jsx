@@ -1,15 +1,18 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";   // for canvas usage
 
-import CanvasLoader from "../Loader";
+import CanvasLoader from "../Loader";  // just a loader
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+
+  const computer = useGLTF("./desktop_pc/scene.gltf"); // model use krne ke liye
 
   return (
-    <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+    
+    <mesh> // when dealing with react-three we use instead of div
+      
+      <hemisphereLight intensity={0.5} groundColor='black' />
       <spotLight
         position={[0, 50, 10]}
         angle={0.12}
@@ -18,7 +21,7 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={1} />
+      <pointLight intensity={1} /> // for adding point  glare on computer
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.6 : 0.7}
