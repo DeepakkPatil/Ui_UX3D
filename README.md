@@ -5,5 +5,6 @@ Modular approach
 * usage of Tilt Cards
 * usage of 3D objects for skills
 * star section background
+* for models use: sketchfab
 
 check React-Three Js for more Info
